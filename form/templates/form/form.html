@@ -1,0 +1,90 @@
+{% extends 'form/base.html' %}
+
+{% block content %}
+
+<div class="py-5 text-center">
+    <img width="140" height="39" src="https://advbuzz.com/apply/wp-content/uploads/2019/11/logo.png" class="vc_single_image-img attachment-full" alt="">
+<br>
+<h1>Become a ArvanWorkshop Partner</h1>
+<hr>
+
+</div>
+
+{% if error %}
+<div class="alert alert-danger" role="alert">
+{{ error }}
+</div>
+{% endif %}
+
+<div>
+  <h2>Basic Info</h2>
+<form method="POST" action="{% url 'form' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputCompany">*Company/Name</label>
+      <input type="test" name="company" class="form-control" id="inputCompany">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">*Address</label>
+    <input type="text" name="add1" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">*Address 2</label>
+    <input type="text" name="add2" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">*City</label>
+      <input type="text" name="city" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">*Zip</label>
+      <input type="number" name="zipC" class="form-control" id="inputZip">
+    </div>
+        <div class="form-group col-md-12">
+      <label for="inputCity">*State</label>
+      <input type="text" name="state" class="form-control" id="inputCity">
+    </div>
+  </div>
+</div>
+
+<br>
+<div>
+<h2>Contact</h2>
+
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCompany">*First Name</label>
+      <input type="text" name="first_name" class="form-control" id="inputCompany">
+  </div>
+    <div class="form-group col-md-6">
+      <label for="inputCompany">*Last Name</label>
+      <input type="text" name="last_name" class="form-control" id="inputCompany">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputCompany">*Email:</label>
+      <input type="text" name="email" class="form-control" id="inputCompany">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputCompany">*Mobile Phone:</label>
+      <input type="number" name="phone" class="form-control" id="inputCompany">
+    </div>
+  </div>
+  <div>
+    <label for="inputCompany">*Image:</label><br>
+  <input type="file" class="btn btn-secondary" name="image" />
+</div>
+</div>
+
+<br>
+    <div class="">
+        <input class="btn btn-primary" type="submit" value="Submit" />
+    </div>
+</form>
+</div>
+<br>
+
+{% endblock %}
